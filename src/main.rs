@@ -1,7 +1,8 @@
 fn main() {
     println!("Hello, world!");
+    let a = (5, String::from("hello"));
     //get number from user
-    println!("Enter a number: ");
+    println!("Enter a number: {} ", a.1);
     let num = get_number();
 
     if num % 2 == 0 {
@@ -24,8 +25,7 @@ fn get_number() -> i32 {
         match input_num.trim().parse() {
             Ok(num) => break num,
             Err(_) => {
-                println!("Please enter a number");
-                continue;
+                println!("Invalid input. Please enter a number or type 'exit' to quit");
             }
         }
     }
